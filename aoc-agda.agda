@@ -1,4 +1,4 @@
-module main where
+module aoc-agda where
 
 open import IO
 
