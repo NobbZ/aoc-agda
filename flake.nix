@@ -10,6 +10,10 @@
           buildInputs = with pkgs; [
             (agda.withPackages (p: [ p.standard-library p.agda-prelude ]))
           ];
+
+          shellHook = ''
+            export EMACSLOADPATH="$(dirname $(agda-mode locate))":
+          '';
         };
       }
     );
