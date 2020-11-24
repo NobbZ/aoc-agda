@@ -1,2 +1,8 @@
-main
+# Compiled interface files
 *.agdai
+
+# Compiled into Haskell
+MAlonzo
+
+# binary file
+aoc-agda
