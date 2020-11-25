@@ -1,9 +1,10 @@
 module aoc-agda where
 
-open import Function using (_∘_; _$_)
-open import IO
+open import Prelude
 
+import Data.Vec as Vec
 import Y2015.D01 as Y1501 using (runA; runB)
 
-main = run do
+main = do
+  putStrLn Y1501.runA
   putStrLn Y1501.runB
