@@ -49,10 +49,10 @@ _ : backToBasement (Down ∷ []) ≡ 1
 _ = refl
 
 runA′ : String → String
-runA′ = show ∘ trackFloor ∘ maybe id [] ∘ stringToDirections
+runA′ = show ∘ trackFloor ∘ maybe [] id ∘ stringToDirections
 
 runB″ : String → Nat
-runB″ = backToBasement ∘ maybe id [] ∘ stringToDirections
+runB″ = backToBasement ∘ maybe [] id ∘ stringToDirections
 
 runB′ : String → String
 runB′ = show ∘ runB″
