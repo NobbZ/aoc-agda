@@ -7,9 +7,12 @@ all: aoc-agda
 run: aoc-agda
 	./aoc-agda
 
-clean: $(AGDA_INT:%=%_clean) $(BINS:%=%_clean) MAlonzo_dirclean
+clean: $(AGDA_INT:%=%_clean) $(BINS:%=%_clean) $(BINS:%=src/%_clean) src/MAlonzo_dirclean
 
-aoc-agda: aoc-agda.agda $(AGDA_SRC)
+$(BINS): %: src/%
+	cp src/$@ $@
+
+src/$(BINS): src/%: src/%.agda $(AGDA_SRC)
 	agda -c $<
 
 %_clean:
